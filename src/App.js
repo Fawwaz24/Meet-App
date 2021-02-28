@@ -11,12 +11,13 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    eventCount: 5
+    eventCount: 32
   };
 
   updateEvents = (location, eventCount) => {
     let locationEvents;
     getEvents().then((events) => {
+      locationEvents = events;
       if (location === 'all' && eventCount === 0) {
         locationEvents = events;
       } else if (location !== 'all' && eventCount === 0) {

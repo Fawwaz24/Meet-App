@@ -65,10 +65,10 @@ describe('<App /> integration', () => {
         const locations = extractLocations(mockData);
         AppWrapper.instance().updateEvents = jest.fn();
         AppWrapper.instance().forceUpdate();
-        NumberOfEventsWrapper.setState({ events: locations, eventCount: 5 });
+        NumberOfEventsWrapper.setState({ events: locations, eventCount: 32 });
         NumberOfEventsWrapper.find('.event-number-input').simulate('change');
-        expect(NumberOfEventsWrapper.state('eventCount')).toEqual('5');
-        expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith('', '5');
+        expect(NumberOfEventsWrapper.state('eventCount')).toEqual('32');
+        expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith('', '32');
         AppWrapper.unmount();
     });
 
