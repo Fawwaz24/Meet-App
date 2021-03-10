@@ -79,9 +79,9 @@ class App extends Component {
 
     const data = [
       { city: 'Dubai', number: 2 },
-      { city: 'Toronto,', number: 2 },
-      { city: 'Santiago,', number: 3 },
-      { city: 'Tokyo,', number: 2 },
+      { city: 'Toronto', number: 2 },
+      { city: 'Santiago', number: 3 },
+      { city: 'Tokyo', number: 2 },
     ];
 
     return (
@@ -98,12 +98,10 @@ class App extends Component {
           updateEvents={this.updateEvents}
         />
 
-        <InfoAlert text={this.state.infoAlert} />
-
         <div className='data-vis-wrapper'>
           <EventGenre events={this.state.events} />
           <ResponsiveContainer height={400}>
-            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 0 }}>
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
               <CartesianGrid />
               <XAxis type='category' dataKey='city' name='city' />
               <YAxis
@@ -125,6 +123,7 @@ class App extends Component {
           </ResponsiveContainer>
         </div>
 
+        <InfoAlert text={this.state.infoAlert} />
         <EventList events={this.state.events} />
 
       </div>
